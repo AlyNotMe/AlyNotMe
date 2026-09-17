@@ -65,7 +65,7 @@ async function npmPackages() {
 
 function replaceBlock(content, marker, value) {
   const re = new RegExp(`(<!--${marker}:START-->)([\\s\\S]*?)(<!--${marker}:END-->)`);
-  return content.replace(re, `$1\n${value}\n$3`);
+  return content.replace(re, `$1\n\n${value}\n\n$3`);
 }
 
 const fs = await import("node:fs/promises");
