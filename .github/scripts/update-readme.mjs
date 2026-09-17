@@ -17,19 +17,6 @@ const gh = async (path, { graphql = false, body } = {}) => {
   return res.json();
 };
 
-const relativeTime = (iso) => {
-  const diffMs = Date.now() - new Date(iso).getTime();
-  const mins = Math.floor(diffMs / 60000);
-  if (mins < 60) return `${mins} min`;
-  const hours = Math.floor(mins / 60);
-  if (hours < 24) return `${hours}h`;
-  const days = Math.floor(hours / 24);
-  if (days < 30) return `${days}j`;
-  const months = Math.floor(days / 30);
-  if (months < 12) return `${months} mois`;
-  return `${Math.floor(months / 12)} an(s)`;
-};
-
 async function latestRepos() {
   const orgs = await gh(`/users/${USER}/orgs`);
   const repoLists = await Promise.all([
@@ -42,11 +29,12 @@ async function latestRepos() {
     .filter((r) => !r.fork && !seen.has(r.full_name) && seen.add(r.full_name))
     .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
     .slice(0, 5);
-  const lines = repos.map(
-    (r) => `- ↻ **[${r.full_name}](${r.html_url})** — pushé il y a ${relativeTime(r.pushed_at)}, sur \`${r.default_branch}\``
-  );
-  lines.push(`\n[voir tous les repos →](https://github.com/${USER}?tab=repositories)`);
-  return lines.join("\n");
+  const lines = repos.map((r) => {
+    const badge = `https://github-readme-stats-kms.vercel.app/api/repo-status?repo=${encodeURIComponent(r.full_name)}&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f`;
+    return `[![${r.full_name}](${badge})](${r.html_url})`;
+  });
+  lines.push(`\n\n[voir tous les repos →](https://github.com/${USER}?tab=repositories)`);
+  return lines.join("<br/>\n");
 }
 
 async function npmPackages() {
