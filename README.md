@@ -12,30 +12,17 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 
 </div>
 
-- 🔭 En ce moment : [Forja](https://github.com/AlyNotMe/forja) — cœur registry-driven (auto-discovery des routes/middlewares), CLI de scaffolding façon Vite, écosystème d'addons façon AdonisJS.
+- 🔭 En ce moment : [Forja](https://github.com/forjajs/forja) — cœur registry-driven (auto-discovery des routes/middlewares), CLI de scaffolding façon Vite, écosystème d'addons façon AdonisJS.
 - 🌱 Le projet est né de [NeoChess-Legacy](https://github.com/AlyNotMe/NeoChess-Legacy), en généralisant un pattern de registries qui y était apparu organiquement.
 
 ### Derniers repos <sub>(auto)</sub>
 
 <!--REPOS:START-->
-
-- ↻ **[AlyNotMe](https://github.com/AlyNotMe/AlyNotMe)** — pushé il y a 0 min, sur `main`
-- ↻ **[forja](https://github.com/AlyNotMe/forja)** — pushé il y a 1h, sur `main`
-- ↻ **[NeoChess-Legacy](https://github.com/AlyNotMe/NeoChess-Legacy)** — pushé il y a 2j, sur `main`
-- ↻ **[kms-launcher-releases](https://github.com/AlyNotMe/kms-launcher-releases)** — pushé il y a 22j, sur `main`
-
-[voir tous les repos →](https://github.com/AlyNotMe?tab=repositories)
-
 <!--REPOS:END-->
 
 ### Packages npm — org `@forjajs` <sub>(auto)</sub>
 
 <!--NPM:START-->
-
-| Package | Version | Description |
-|---|---|---|
-| [`@forjajs/json-driver`](https://www.npmjs.com/package/@forjajs/json-driver) | v0.1.1 | A standalone, page-based B+tree JSON storage engine — usable with or without @forjajs/orm. |
-
 <!--NPM:END-->
 
 ### Stats
@@ -50,9 +37,6 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 <div align="center">
 
 <!--EXTRA:START-->
-
-**Repos publics :** 6 · **Organisations :** 0 · **Membre depuis :** 2025
-
 <!--EXTRA:END-->
 
 </div>

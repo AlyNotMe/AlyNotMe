@@ -31,13 +31,19 @@ const relativeTime = (iso) => {
 };
 
 async function latestRepos() {
-  const repos = await gh(`/users/${USER}/repos?per_page=100&sort=pushed`);
-  const top = repos.filter((r) => !r.fork).slice(0, 5);
-  const lines = await Promise.all(
-    top.map(async (r) => {
-      const branch = r.default_branch;
-      return `- ↻ **[${r.name}](${r.html_url})** — pushé il y a ${relativeTime(r.pushed_at)}, sur \`${branch}\``;
-    })
+  const orgs = await gh(`/users/${USER}/orgs`);
+  const repoLists = await Promise.all([
+    gh(`/users/${USER}/repos?per_page=100&sort=pushed`),
+    ...orgs.map((o) => gh(`/orgs/${o.login}/repos?per_page=100&sort=pushed&type=public`)),
+  ]);
+  const seen = new Set();
+  const repos = repoLists
+    .flat()
+    .filter((r) => !r.fork && !seen.has(r.full_name) && seen.add(r.full_name))
+    .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
+    .slice(0, 5);
+  const lines = repos.map(
+    (r) => `- ↻ **[${r.full_name}](${r.html_url})** — pushé il y a ${relativeTime(r.pushed_at)}, sur \`${r.default_branch}\``
   );
   lines.push(`\n[voir tous les repos →](https://github.com/${USER}?tab=repositories)`);
   return lines.join("\n");
