@@ -18,11 +18,25 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 ### Derniers repos <sub>(auto)</sub>
 
 <!--REPOS:START-->
+
+[![AlyNotMe/AlyNotMe](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2FAlyNotMe&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/AlyNotMe)<br/>
+[![forjajs/forja](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=forjajs%2Fforja&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/forjajs/forja)<br/>
+[![AlyNotMe/NeoChess-Legacy](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2FNeoChess-Legacy&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/NeoChess-Legacy)<br/>
+[![AlyNotMe/kms-launcher-releases](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fkms-launcher-releases&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/kms-launcher-releases)<br/>
+
+
+[voir tous les repos →](https://github.com/AlyNotMe?tab=repositories)
+
 <!--REPOS:END-->
 
 ### Packages npm — org `@forjajs` <sub>(auto)</sub>
 
 <!--NPM:START-->
+
+| Package | Version | Description |
+|---|---|---|
+| [`@forjajs/json-driver`](https://www.npmjs.com/package/@forjajs/json-driver) | v0.1.1 | A standalone, page-based B+tree JSON storage engine — usable with or without @forjajs/orm. |
+
 <!--NPM:END-->
 
 ### Stats
@@ -37,6 +51,9 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 <div align="center">
 
 <!--EXTRA:START-->
+
+**Repos publics :** 5 · **Organisations :** 1 · **Membre depuis :** 2025
+
 <!--EXTRA:END-->
 
 </div>
