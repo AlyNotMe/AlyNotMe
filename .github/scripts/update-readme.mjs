@@ -66,13 +66,13 @@ async function npmPackages() {
 async function topLanguages() {
   const repos = await gh(`/users/${USER}/repos?per_page=100`);
   const totals = {};
-  for (const r of repos.filter((r) => !r.fork)) {
-    try {
-      const langs = await gh(`/repos/${USER}/${r.name}/languages`);
-      for (const [lang, bytes] of Object.entries(langs)) totals[lang] = (totals[lang] || 0) + bytes;
-    } catch {
-      /* skip inaccessible repo */
-    }
+  const perRepo = await Promise.all(
+    repos
+      .filter((r) => !r.fork)
+      .map((r) => gh(`/repos/${USER}/${r.name}/languages`).catch(() => ({})))
+  );
+  for (const langs of perRepo) {
+    for (const [lang, bytes] of Object.entries(langs)) totals[lang] = (totals[lang] || 0) + bytes;
   }
   const sum = Object.values(totals).reduce((a, b) => a + b, 0) || 1;
   const top = Object.entries(totals)
