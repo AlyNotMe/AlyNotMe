@@ -63,6 +63,13 @@ async function npmPackages() {
   }
 }
 
+async function extraStats() {
+  const user = await gh(`/users/${USER}`);
+  const orgs = await gh(`/users/${USER}/orgs`);
+  const memberSince = new Date(user.created_at).getFullYear();
+  return `**Repos publics :** ${user.public_repos} · **Organisations :** ${orgs.length} · **Membre depuis :** ${memberSince}`;
+}
+
 function replaceBlock(content, marker, value) {
   const re = new RegExp(`(<!--${marker}:START-->)([\\s\\S]*?)(<!--${marker}:END-->)`);
   return content.replace(re, `$1\n\n${value}\n\n$3`);
@@ -71,9 +78,10 @@ function replaceBlock(content, marker, value) {
 const fs = await import("node:fs/promises");
 let readme = await fs.readFile("README.md", "utf8");
 
-const [repos, npm] = await Promise.all([latestRepos(), npmPackages()]);
+const [repos, npm, extra] = await Promise.all([latestRepos(), npmPackages(), extraStats()]);
 
 readme = replaceBlock(readme, "REPOS", repos);
 readme = replaceBlock(readme, "NPM", npm);
+readme = replaceBlock(readme, "EXTRA", extra);
 
 await fs.writeFile("README.md", readme);
