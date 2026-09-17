@@ -1,13 +1,21 @@
-### Salut, moi c'est KMS 👋
+<h3 align="center">Salut, moi c'est KMS 👋</h3>
 
-Je construis des fondations backend, pas des templates jetables. Actuellement concentré sur **Forja**, un framework Node.js/Express "sans opinion par défaut, équipé sur demande".
+<p align="center">
+Je construis des fondations backend, pas des templates jetables.<br/>
+Actuellement concentré sur <b>Forja</b>, un framework Node.js/Express « sans opinion par défaut, équipé sur demande ».
+</p>
 
-`Node.js` · `Express` · `TypeScript` · `@forjajs`
+<p align="center">
+<img src="https://img.shields.io/badge/Node.js-15130f?style=for-the-badge&logo=nodedotjs&logoColor=e08a4f" />
+<img src="https://img.shields.io/badge/Express-15130f?style=for-the-badge&logo=express&logoColor=e08a4f" />
+<img src="https://img.shields.io/badge/TypeScript-15130f?style=for-the-badge&logo=typescript&logoColor=e08a4f" />
+<img src="https://img.shields.io/badge/@forjajs-15130f?style=for-the-badge&logo=npm&logoColor=e08a4f" />
+</p>
 
 - 🔭 En ce moment : [Forja](https://github.com/AlyNotMe/forja) — cœur registry-driven (auto-discovery des routes/middlewares), CLI de scaffolding façon Vite, écosystème d'addons façon AdonisJS.
 - 🌱 Le projet est né de [NeoChess-Legacy](https://github.com/AlyNotMe/NeoChess-Legacy), en généralisant un pattern de registries qui y était apparu organiquement.
 
-### Derniers repos
+<h3>Derniers repos <sub>(auto)</sub></h3>
 <!--REPOS:START-->
 - ↻ **[AlyNotMe](https://github.com/AlyNotMe/AlyNotMe)** — pushé il y a 2 min, sur `main`
 - ↻ **[forja](https://github.com/AlyNotMe/forja)** — pushé il y a 1h, sur `main`
@@ -17,30 +25,22 @@ Je construis des fondations backend, pas des templates jetables. Actuellement co
 [voir tous les repos →](https://github.com/AlyNotMe?tab=repositories)
 <!--REPOS:END-->
 
-### Packages npm — org `@forjajs`
+<h3>Packages npm — org <code>@forjajs</code> <sub>(auto)</sub></h3>
 <!--NPM:START-->
 | Package | Version | Description |
 |---|---|---|
 | [`@forjajs/json-driver`](https://www.npmjs.com/package/@forjajs/json-driver) | v0.1.1 | A standalone, page-based B+tree JSON storage engine — usable with or without @forjajs/orm. |
 <!--NPM:END-->
 
-### Langages les plus utilisés (top 10)
-<!--LANGS:START-->
-`JavaScript` 46.8% · `TypeScript` 38.7% · `Pug` 4.0% · `CSS` 1.8% · `EJS` 1.7% · `Handlebars` 1.7% · `Svelte` 1.6% · `Vue` 1.5% · `HTML` 1.4% · `Shell` 0.5%
-<!--LANGS:END-->
+<h3>Stats</h3>
 
-### Activité GitHub
-<!--STATS:START-->
-| Métrique | Valeur |
-|---|---|
-| Repos publics | **5** |
-| Contributions (12 mois) | **73** |
-| Commits (12 mois) | **62** |
-| Pull requests | **5** |
-| Issues ouvertes | **0** |
-| Stars reçues | **0** |
-| Organisations | **0** |
-| Membre depuis | **2025** |
-<!--STATS:END-->
+<p align="center">
+<img height="165" src="https://github-readme-stats-kms.vercel.app/api?username=AlyNotMe&show_icons=true&count_private=true&theme=custom&hide_border=true&bg_color=15130f&title_color=e08a4f&icon_color=e08a4f&text_color=ece7dd&ring_color=e08a4f" />
+<img height="165" src="https://github-readme-stats-kms.vercel.app/api/top-langs/?username=AlyNotMe&layout=compact&langs_count=10&theme=custom&hide_border=true&bg_color=15130f&title_color=e08a4f&text_color=ece7dd" />
+</p>
 
-<sub>Ce README est mis à jour automatiquement chaque jour par une GitHub Action (déclenchable manuellement) — voir `.github/workflows/update-readme.yml`.</sub>
+<p align="center">
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=AlyNotMe&theme=default&hide_border=true&background=15130f&ring=e08a4f&fire=e08a4f&currStreakLabel=e08a4f&sideLabels=ece7dd&currStreakNum=ece7dd&sideNums=ece7dd&dates=a39a89&stroke=332e26" />
+</p>
+
+<sub>Le README complet (repos & packages npm) est régénéré automatiquement chaque jour par une GitHub Action — déclenchable aussi à la main. Voir <code>.github/workflows/update-readme.yml</code>. Les cartes stats/langages/streak ci-dessus sont des images calculées en direct à chaque affichage — toujours à jour, sans action.</sub>

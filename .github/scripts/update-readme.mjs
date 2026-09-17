@@ -63,66 +63,6 @@ async function npmPackages() {
   }
 }
 
-async function topLanguages() {
-  const repos = await gh(`/users/${USER}/repos?per_page=100`);
-  const totals = {};
-  const perRepo = await Promise.all(
-    repos
-      .filter((r) => !r.fork)
-      .map((r) => gh(`/repos/${USER}/${r.name}/languages`).catch(() => ({})))
-  );
-  for (const langs of perRepo) {
-    for (const [lang, bytes] of Object.entries(langs)) totals[lang] = (totals[lang] || 0) + bytes;
-  }
-  const sum = Object.values(totals).reduce((a, b) => a + b, 0) || 1;
-  const top = Object.entries(totals)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 10);
-  return top
-    .map(([lang, bytes]) => `\`${lang}\` ${((bytes / sum) * 100).toFixed(1)}%`)
-    .join(" · ");
-}
-
-async function activityStats() {
-  const user = await gh(`/users/${USER}`);
-  const repos = await gh(`/users/${USER}/repos?per_page=100`);
-  const orgs = await gh(`/users/${USER}/orgs`);
-  const stars = repos.filter((r) => !r.fork).reduce((a, r) => a + r.stargazers_count, 0);
-
-  const prSearch = await gh(`/search/issues?q=author:${USER}+type:pr`);
-  const issueSearch = await gh(`/search/issues?q=author:${USER}+type:issue`);
-
-  const since = new Date(Date.now() - 365 * 24 * 3600 * 1000).toISOString();
-  const query = {
-    query: `query($login:String!,$from:DateTime!){ user(login:$login){ contributionsCollection(from:$from){ contributionCalendar{ totalContributions } totalCommitContributions restrictedContributionsCount } } }`,
-    variables: { login: USER, from: since },
-  };
-  let contributions = "—";
-  let commits = "—";
-  try {
-    const data = await gh(null, { graphql: true, body: query });
-    const cc = data.data.user.contributionsCollection;
-    contributions = cc.contributionCalendar.totalContributions;
-    commits = cc.totalCommitContributions + cc.restrictedContributionsCount;
-  } catch {
-    /* GraphQL unavailable, keep placeholders */
-  }
-
-  const memberSince = new Date(user.created_at).getFullYear();
-
-  const rows = [
-    ["Repos publics", user.public_repos],
-    ["Contributions (12 mois)", contributions],
-    ["Commits (12 mois)", commits],
-    ["Pull requests", prSearch.total_count],
-    ["Issues ouvertes", issueSearch.total_count],
-    ["Stars reçues", stars],
-    ["Organisations", orgs.length],
-    ["Membre depuis", memberSince],
-  ].map(([label, value]) => `| ${label} | **${value}** |`);
-  return ["| Métrique | Valeur |", "|---|---|", ...rows].join("\n");
-}
-
 function replaceBlock(content, marker, value) {
   const re = new RegExp(`(<!--${marker}:START-->)([\\s\\S]*?)(<!--${marker}:END-->)`);
   return content.replace(re, `$1\n${value}\n$3`);
@@ -131,16 +71,9 @@ function replaceBlock(content, marker, value) {
 const fs = await import("node:fs/promises");
 let readme = await fs.readFile("README.md", "utf8");
 
-const [repos, npm, langs, stats] = await Promise.all([
-  latestRepos(),
-  npmPackages(),
-  topLanguages(),
-  activityStats(),
-]);
+const [repos, npm] = await Promise.all([latestRepos(), npmPackages()]);
 
 readme = replaceBlock(readme, "REPOS", repos);
 readme = replaceBlock(readme, "NPM", npm);
-readme = replaceBlock(readme, "LANGS", langs);
-readme = replaceBlock(readme, "STATS", stats);
 
 await fs.writeFile("README.md", readme);
