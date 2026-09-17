@@ -18,11 +18,24 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 ### Derniers repos <sub>(auto)</sub>
 
 <!--REPOS:START-->
+
+- ↻ **[AlyNotMe/AlyNotMe](https://github.com/AlyNotMe/AlyNotMe)** — pushé il y a 9 min, sur `main`
+- ↻ **[forjajs/forja](https://github.com/forjajs/forja)** — pushé il y a 2h, sur `main`
+- ↻ **[AlyNotMe/NeoChess-Legacy](https://github.com/AlyNotMe/NeoChess-Legacy)** — pushé il y a 2j, sur `main`
+- ↻ **[AlyNotMe/kms-launcher-releases](https://github.com/AlyNotMe/kms-launcher-releases)** — pushé il y a 22j, sur `main`
+
+[voir tous les repos →](https://github.com/AlyNotMe?tab=repositories)
+
 <!--REPOS:END-->
 
 ### Packages npm — org `@forjajs` <sub>(auto)</sub>
 
 <!--NPM:START-->
+
+| Package | Version | Description |
+|---|---|---|
+| [`@forjajs/json-driver`](https://www.npmjs.com/package/@forjajs/json-driver) | v0.1.1 | A standalone, page-based B+tree JSON storage engine — usable with or without @forjajs/orm. |
+
 <!--NPM:END-->
 
 ### Stats
@@ -37,6 +50,9 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 <div align="center">
 
 <!--EXTRA:START-->
+
+**Repos publics :** 5 · **Organisations :** 1 · **Membre depuis :** 2025
+
 <!--EXTRA:END-->
 
 </div>
