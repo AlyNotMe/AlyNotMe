@@ -52,7 +52,7 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 
 <!--EXTRA:START-->
 
-**Repos publics :** 5 · **Organisations :** 1 · **Membre depuis :** 2025
+**Repos publics :** 6 · **Organisations :** 1 · **Membre depuis :** 2025
 
 <!--EXTRA:END-->
 
