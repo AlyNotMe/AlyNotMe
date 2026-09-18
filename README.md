@@ -19,8 +19,8 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 
 <!--REPOS:START-->
 
-[![forjajs/forja](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=forjajs%2Fforja&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/forjajs/forja)<br/>
 [![AlyNotMe/AlyNotMe](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2FAlyNotMe&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/AlyNotMe)<br/>
+[![forjajs/forja](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=forjajs%2Fforja&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/forjajs/forja)<br/>
 [![AlyNotMe/NeoChess-Legacy](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2FNeoChess-Legacy&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/NeoChess-Legacy)<br/>
 [![AlyNotMe/kms-launcher-releases](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fkms-launcher-releases&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/kms-launcher-releases)<br/>
 
@@ -36,7 +36,9 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 | Package | Version | Description |
 |---|---|---|
 | [`@forjajs/json-driver`](https://www.npmjs.com/package/@forjajs/json-driver) | v0.1.1 | A standalone, page-based B+tree JSON storage engine — usable with or without @forjajs/orm. |
-| [`@forjajs/contracts`](https://www.npmjs.com/package/@forjajs/contracts) | v? |  |
+| [`@forjajs/contracts`](https://www.npmjs.com/package/@forjajs/contracts) | v0.1.0 | Zero-dependency DIP contracts (Repository, Hasher, ViewEngine, Addon) and the assertImplements() runtime guard, shared by every Forja addon — HTTP-based or not. |
+| [`@forjajs/core`](https://www.npmjs.com/package/@forjajs/core) | v0.1.0 | Forja core: registry-driven, feature-based Express foundation — auto-discovers routes and global middlewares, no central list to keep in sync. |
+| [`@forjajs/orm`](https://www.npmjs.com/package/@forjajs/orm) | v0.1.0 | Multi-driver ORM (json-driver, SQLite, MySQL, PostgreSQL, MongoDB) — schema validation, migrations, transactions, query builder, relations. Usable standalone, no Forja required. |
 
 <!--NPM:END-->
 
