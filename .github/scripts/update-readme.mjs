@@ -58,21 +58,27 @@ async function latestRepos() {
   const entries = [...ownRepos, ...prEntries]
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .filter((e) => !seen.has(e.full_name) && seen.add(e.full_name))
-    .slice(0, 5);
+    .slice(0, 10);
 
   const colors = "bg_color=15130f&text_color=ece7dd&accent_color=e08a4f";
-  const lines = entries.map((e) => {
-    let badge;
+  const badgeFor = (e) => {
     if (e.kind === "push") {
-      badge = `https://github-readme-stats-kms.vercel.app/api/repo-status?repo=${encodeURIComponent(e.full_name)}&${colors}`;
-    } else {
-      const state = e.merged ? "merged" : "open";
-      badge = `https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=${encodeURIComponent(e.full_name)}&pr_title=${encodeURIComponent(e.title)}&pr_date=${encodeURIComponent(e.date)}&pr_state=${state}&${colors}`;
+      return `https://github-readme-stats-kms.vercel.app/api/repo-status?repo=${encodeURIComponent(e.full_name)}&${colors}`;
     }
-    return `[![${e.full_name}](${badge})](${e.html_url})`;
-  });
-  const list = lines.join("<br/>\n");
-  return `<table><tr><td>\n\n${list}\n\n</td></tr></table>\n\n[voir tous les repos →](https://github.com/${USER}?tab=repositories)`;
+    const state = e.merged ? "merged" : "open";
+    return `https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=${encodeURIComponent(e.full_name)}&pr_title=${encodeURIComponent(e.title)}&pr_date=${encodeURIComponent(e.date)}&pr_state=${state}&${colors}`;
+  };
+  const lineFor = (e) => `[![${e.full_name}](${badgeFor(e)})](${e.html_url})`;
+
+  const visible = entries.slice(0, 5);
+  const rest = entries.slice(5, 10);
+
+  let body = visible.map(lineFor).join("<br/>\n");
+  if (rest.length) {
+    body += `\n\n<details><summary>Voir plus (${rest.length})</summary><br/>\n\n${rest.map(lineFor).join("<br/>\n")}\n\n</details>`;
+  }
+
+  return `<table><tr><td>\n\n${body}\n\n</td></tr></table>\n\n[voir tous les repos →](https://github.com/${USER}?tab=repositories)`;
 }
 
 async function npmPackages() {
