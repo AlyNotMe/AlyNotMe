@@ -17,24 +17,18 @@ const gh = async (path, { graphql = false, body } = {}) => {
   return res.json();
 };
 
-async function isDevelopedFork(r) {
-  const full = await gh(`/repos/${r.full_name}`);
-  const parent = full.parent;
-  if (!parent) return false;
-  try {
-    const branches = await gh(`/repos/${r.full_name}/branches?per_page=100`);
-    const results = await Promise.all(
-      branches.map((b) =>
-        gh(
-          `/repos/${parent.full_name}/compare/${parent.owner.login}:${parent.default_branch}...${r.owner.login}:${b.name}`
-        ).catch(() => ({ ahead_by: 0 }))
-      )
-    );
-    return results.some((cmp) => cmp.ahead_by > 0);
-  } catch {
-    return false;
-  }
-}
+const relativeTime = (iso) => {
+  const diffMs = Date.now() - new Date(iso).getTime();
+  const mins = Math.floor(diffMs / 60000);
+  if (mins < 60) return `${mins} min`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `${hours}h`;
+  const days = Math.floor(hours / 24);
+  if (days < 30) return `${days}j`;
+  const months = Math.floor(days / 30);
+  if (months < 12) return `${months} mois`;
+  return `${Math.floor(months / 12)} an(s)`;
+};
 
 async function latestRepos() {
   const orgs = await gh(`/users/${USER}/orgs`);
@@ -42,19 +36,36 @@ async function latestRepos() {
     gh(`/users/${USER}/repos?per_page=100&sort=pushed`),
     ...orgs.map((o) => gh(`/orgs/${o.login}/repos?per_page=100&sort=pushed&type=public`)),
   ]);
-  const seen = new Set();
-  const candidates = repoLists
-    .flat()
-    .filter((r) => !seen.has(r.full_name) && seen.add(r.full_name))
-    .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+  const ownRepos = repoLists.flat().map((r) => ({
+    full_name: r.full_name,
+    html_url: r.html_url,
+    date: r.pushed_at,
+    kind: "push",
+  }));
 
-  const forkChecks = await Promise.all(
-    candidates.map((r) => (r.fork ? isDevelopedFork(r) : Promise.resolve(true)))
-  );
-  const repos = candidates.filter((_, i) => forkChecks[i]).slice(0, 5);
-  const lines = repos.map((r) => {
-    const badge = `https://github-readme-stats-kms.vercel.app/api/repo-status?repo=${encodeURIComponent(r.full_name)}&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f`;
-    return `[![${r.full_name}](${badge})](${r.html_url})`;
+  const prSearch = await gh(`/search/issues?q=author:${USER}+type:pr&sort=updated&order=desc&per_page=15`);
+  const prEntries = prSearch.items.map((item) => ({
+    full_name: item.repository_url.replace("https://api.github.com/repos/", ""),
+    html_url: item.pull_request.html_url,
+    date: item.pull_request.merged_at ?? item.updated_at,
+    kind: "pr",
+    title: item.title,
+    merged: Boolean(item.pull_request.merged_at),
+  }));
+
+  const seen = new Set();
+  const entries = [...ownRepos, ...prEntries]
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .filter((e) => !seen.has(e.full_name) && seen.add(e.full_name))
+    .slice(0, 5);
+
+  const lines = entries.map((e) => {
+    if (e.kind === "push") {
+      const badge = `https://github-readme-stats-kms.vercel.app/api/repo-status?repo=${encodeURIComponent(e.full_name)}&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f`;
+      return `[![${e.full_name}](${badge})](${e.html_url})`;
+    }
+    const status = e.merged ? "PR mergée" : "PR ouverte";
+    return `- 🔀 **${status}** sur [${e.full_name}](${e.html_url}) — *${e.title}*, il y a ${relativeTime(e.date)}`;
   });
   lines.push(`\n\n[voir tous les repos →](https://github.com/${USER}?tab=repositories)`);
   return lines.join("<br/>\n");
