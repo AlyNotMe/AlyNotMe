@@ -17,19 +17,6 @@ const gh = async (path, { graphql = false, body } = {}) => {
   return res.json();
 };
 
-const relativeTime = (iso) => {
-  const diffMs = Date.now() - new Date(iso).getTime();
-  const mins = Math.floor(diffMs / 60000);
-  if (mins < 60) return `${mins} min`;
-  const hours = Math.floor(mins / 60);
-  if (hours < 24) return `${hours}h`;
-  const days = Math.floor(hours / 24);
-  if (days < 30) return `${days}j`;
-  const months = Math.floor(days / 30);
-  if (months < 12) return `${months} mois`;
-  return `${Math.floor(months / 12)} an(s)`;
-};
-
 async function myLastPush(fullName) {
   try {
     const events = await gh(`/repos/${fullName}/events?per_page=100`);
@@ -73,16 +60,19 @@ async function latestRepos() {
     .filter((e) => !seen.has(e.full_name) && seen.add(e.full_name))
     .slice(0, 5);
 
+  const colors = "bg_color=15130f&text_color=ece7dd&accent_color=e08a4f";
   const lines = entries.map((e) => {
+    let badge;
     if (e.kind === "push") {
-      const badge = `https://github-readme-stats-kms.vercel.app/api/repo-status?repo=${encodeURIComponent(e.full_name)}&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f`;
-      return `[![${e.full_name}](${badge})](${e.html_url})`;
+      badge = `https://github-readme-stats-kms.vercel.app/api/repo-status?repo=${encodeURIComponent(e.full_name)}&${colors}`;
+    } else {
+      const state = e.merged ? "merged" : "open";
+      badge = `https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=${encodeURIComponent(e.full_name)}&pr_title=${encodeURIComponent(e.title)}&pr_date=${encodeURIComponent(e.date)}&pr_state=${state}&${colors}`;
     }
-    const status = e.merged ? "PR mergée" : "PR ouverte";
-    return `- 🔀 **${status}** sur [${e.full_name}](${e.html_url}) — *${e.title}*, il y a ${relativeTime(e.date)}`;
+    return `[![${e.full_name}](${badge})](${e.html_url})`;
   });
-  lines.push(`\n\n[voir tous les repos →](https://github.com/${USER}?tab=repositories)`);
-  return lines.join("<br/>\n");
+  const list = lines.join("<br/>\n");
+  return `<table><tr><td>\n\n${list}\n\n</td></tr></table>\n\n[voir tous les repos →](https://github.com/${USER}?tab=repositories)`;
 }
 
 async function npmPackages() {
