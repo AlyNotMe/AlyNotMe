@@ -17,6 +17,20 @@ const gh = async (path, { graphql = false, body } = {}) => {
   return res.json();
 };
 
+async function isDevelopedFork(r) {
+  const full = await gh(`/repos/${r.full_name}`);
+  const parent = full.parent;
+  if (!parent) return false;
+  try {
+    const cmp = await gh(
+      `/repos/${parent.full_name}/compare/${parent.owner.login}:${parent.default_branch}...${r.owner.login}:${r.default_branch}`
+    );
+    return cmp.ahead_by > 0;
+  } catch {
+    return false;
+  }
+}
+
 async function latestRepos() {
   const orgs = await gh(`/users/${USER}/orgs`);
   const repoLists = await Promise.all([
@@ -24,11 +38,15 @@ async function latestRepos() {
     ...orgs.map((o) => gh(`/orgs/${o.login}/repos?per_page=100&sort=pushed&type=public`)),
   ]);
   const seen = new Set();
-  const repos = repoLists
+  const candidates = repoLists
     .flat()
-    .filter((r) => !r.fork && !seen.has(r.full_name) && seen.add(r.full_name))
-    .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
-    .slice(0, 5);
+    .filter((r) => !seen.has(r.full_name) && seen.add(r.full_name))
+    .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+
+  const forkChecks = await Promise.all(
+    candidates.map((r) => (r.fork ? isDevelopedFork(r) : Promise.resolve(true)))
+  );
+  const repos = candidates.filter((_, i) => forkChecks[i]).slice(0, 5);
   const lines = repos.map((r) => {
     const badge = `https://github-readme-stats-kms.vercel.app/api/repo-status?repo=${encodeURIComponent(r.full_name)}&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f`;
     return `[![${r.full_name}](${badge})](${r.html_url})`;
