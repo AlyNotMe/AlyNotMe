@@ -22,10 +22,15 @@ async function isDevelopedFork(r) {
   const parent = full.parent;
   if (!parent) return false;
   try {
-    const cmp = await gh(
-      `/repos/${parent.full_name}/compare/${parent.owner.login}:${parent.default_branch}...${r.owner.login}:${r.default_branch}`
+    const branches = await gh(`/repos/${r.full_name}/branches?per_page=100`);
+    const results = await Promise.all(
+      branches.map((b) =>
+        gh(
+          `/repos/${parent.full_name}/compare/${parent.owner.login}:${parent.default_branch}...${r.owner.login}:${b.name}`
+        ).catch(() => ({ ahead_by: 0 }))
+      )
     );
-    return cmp.ahead_by > 0;
+    return results.some((cmp) => cmp.ahead_by > 0);
   } catch {
     return false;
   }
