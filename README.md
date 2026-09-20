@@ -19,12 +19,15 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 
 <!--REPOS:START-->
 
+<table><tr><td>
+
+[![AlyNotMe/github-readme-stats](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=AlyNotMe%2Fgithub-readme-stats&pr_title=Add%20PR-mode%20to%20repo-status%20for%20visually%20consistent%20badges&pr_date=2026-09-20T12%3A56%3A11Z&pr_state=merged&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/github-readme-stats/pull/3)<br/>
 [![AlyNotMe/AlyNotMe](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2FAlyNotMe&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/AlyNotMe)<br/>
 [![forjajs/forja](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=forjajs%2Fforja&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/forjajs/forja)<br/>
-- 🔀 **PR mergée** sur [oumaimatlh/GraphQL](https://github.com/oumaimatlh/GraphQL/pull/1) — *Refactor: conventions, naming, error handling, and formatting*, il y a 1j<br/>
-[![AlyNotMe/github-readme-stats](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fgithub-readme-stats&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/github-readme-stats)<br/>
-- 🔀 **PR ouverte** sur [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats/pull/4928) — *Add custom repo-status endpoint for live 'pushed X ago' text badges*, il y a 2j<br/>
+[![oumaimatlh/GraphQL](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=oumaimatlh%2FGraphQL&pr_title=Refactor%3A%20conventions%2C%20naming%2C%20error%20handling%2C%20and%20formatting&pr_date=2026-09-18T13%3A18%3A21Z&pr_state=merged&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/oumaimatlh/GraphQL/pull/1)<br/>
+[![anuraghazra/github-readme-stats](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=anuraghazra%2Fgithub-readme-stats&pr_title=Add%20custom%20repo-status%20endpoint%20for%20live%20'pushed%20X%20ago'%20text%20badges&pr_date=2026-09-17T17%3A45%3A46Z&pr_state=open&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/anuraghazra/github-readme-stats/pull/4928)
 
+</td></tr></table>
 
 [voir tous les repos →](https://github.com/AlyNotMe?tab=repositories)
 
