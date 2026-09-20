@@ -30,18 +30,32 @@ const relativeTime = (iso) => {
   return `${Math.floor(months / 12)} an(s)`;
 };
 
+async function myLastPush(fullName) {
+  try {
+    const events = await gh(`/repos/${fullName}/events?per_page=100`);
+    const mine = events.find((e) => e.type === "PushEvent" && e.actor?.login === USER);
+    return mine?.created_at ?? null;
+  } catch {
+    return null;
+  }
+}
+
 async function latestRepos() {
   const orgs = await gh(`/users/${USER}/orgs`);
   const repoLists = await Promise.all([
     gh(`/users/${USER}/repos?per_page=100&sort=pushed`),
     ...orgs.map((o) => gh(`/orgs/${o.login}/repos?per_page=100&sort=pushed&type=public`)),
   ]);
-  const ownRepos = repoLists.flat().map((r) => ({
-    full_name: r.full_name,
-    html_url: r.html_url,
-    date: r.pushed_at,
-    kind: "push",
-  }));
+  const candidates = repoLists.flat();
+  const myDates = await Promise.all(candidates.map((r) => myLastPush(r.full_name)));
+  const ownRepos = candidates
+    .map((r, i) => ({
+      full_name: r.full_name,
+      html_url: r.html_url,
+      date: myDates[i],
+      kind: "push",
+    }))
+    .filter((e) => e.date);
 
   const prSearch = await gh(`/search/issues?q=author:${USER}+type:pr&sort=updated&order=desc&per_page=15`);
   const prEntries = prSearch.items.map((item) => ({
