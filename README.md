@@ -21,9 +21,9 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 
 <table><tr><td>
 
+[![forjajs/forja](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=forjajs%2Fforja&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/forjajs/forja)<br/>
 [![AlyNotMe/AlyNotMe](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2FAlyNotMe&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/AlyNotMe)<br/>
 [![AlyNotMe/github-readme-stats](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fgithub-readme-stats&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/github-readme-stats)<br/>
-[![forjajs/forja](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=forjajs%2Fforja&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/forjajs/forja)<br/>
 [![oumaimatlh/GraphQL](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=oumaimatlh%2FGraphQL&pr_title=Refactor%3A%20conventions%2C%20naming%2C%20error%20handling%2C%20and%20formatting&pr_date=2026-09-18T13%3A18%3A21Z&pr_state=merged&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/oumaimatlh/GraphQL/pull/1)<br/>
 [![anuraghazra/github-readme-stats](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=anuraghazra%2Fgithub-readme-stats&pr_title=Add%20custom%20repo-status%20endpoint%20for%20live%20'pushed%20X%20ago'%20text%20badges&pr_date=2026-09-17T17%3A45%3A46Z&pr_state=open&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/anuraghazra/github-readme-stats/pull/4928)
 
