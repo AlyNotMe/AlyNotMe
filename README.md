@@ -21,18 +21,19 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 
 <table><tr><td>
 
+[![nodeSolidServer/node-solid-server](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=nodeSolidServer%2Fnode-solid-server&pr_title=fix%3A%20add%20Last-Modified%20header%20to%20GET%20and%20HEAD%20responses&pr_date=2026-09-23T13%3A10%3A22Z&pr_state=open&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/nodeSolidServer/node-solid-server/pull/1875)<br/>
+[![AlyNotMe/node-solid-server](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fnode-solid-server&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/node-solid-server)<br/>
 [![forjajs/forja](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=forjajs%2Fforja&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/forjajs/forja)<br/>
 [![AlyNotMe/AlyNotMe](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2FAlyNotMe&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/AlyNotMe)<br/>
-[![AlyNotMe/github-readme-stats](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fgithub-readme-stats&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/github-readme-stats)<br/>
+[![AlyNotMe/github-readme-stats](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fgithub-readme-stats&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/github-readme-stats)
+
+<details><summary>Voir plus (5)</summary><br/>
+
 [![oumaimatlh/GraphQL](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=oumaimatlh%2FGraphQL&pr_title=Refactor%3A%20conventions%2C%20naming%2C%20error%20handling%2C%20and%20formatting&pr_date=2026-09-18T13%3A18%3A21Z&pr_state=merged&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/oumaimatlh/GraphQL/pull/1)<br/>
-[![anuraghazra/github-readme-stats](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=anuraghazra%2Fgithub-readme-stats&pr_title=Add%20custom%20repo-status%20endpoint%20for%20live%20'pushed%20X%20ago'%20text%20badges&pr_date=2026-09-17T17%3A45%3A46Z&pr_state=open&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/anuraghazra/github-readme-stats/pull/4928)
-
-<details><summary>Voir plus (4)</summary><br/>
-
+[![anuraghazra/github-readme-stats](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=anuraghazra%2Fgithub-readme-stats&pr_title=Add%20custom%20repo-status%20endpoint%20for%20live%20'pushed%20X%20ago'%20text%20badges&pr_date=2026-09-17T17%3A45%3A46Z&pr_state=open&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/anuraghazra/github-readme-stats/pull/4928)<br/>
 [![PairZhu/github-desktop](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=PairZhu%2Fgithub-desktop&pr_title=Heads%20up%3A%20upstream%20has%20moved%20forward%20a%20lot%20since%20this%20fork&pr_date=2026-09-17T12%3A24%3A52Z&pr_state=open&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/PairZhu/github-desktop/pull/2)<br/>
 [![AlyNotMe/github-desktop](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fgithub-desktop&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/github-desktop)<br/>
-[![betaversionio/github-desktop](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=betaversionio%2Fgithub-desktop&pr_title=Pr%2Fsolid%20rewrite&pr_date=2026-09-17T11%3A18%3A34Z&pr_state=merged&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/betaversionio/github-desktop/pull/2)<br/>
-[![AlyNotMe/NeoChess-Legacy](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2FNeoChess-Legacy&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/NeoChess-Legacy)
+[![betaversionio/github-desktop](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=betaversionio%2Fgithub-desktop&pr_title=Pr%2Fsolid%20rewrite&pr_date=2026-09-17T11%3A18%3A34Z&pr_state=merged&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/betaversionio/github-desktop/pull/2)
 
 </details>
 
@@ -68,7 +69,7 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 
 <!--EXTRA:START-->
 
-**Repos publics :** 6 · **Organisations :** 1 · **Membre depuis :** 2025
+**Repos publics :** 8 · **Organisations :** 1 · **Membre depuis :** 2025
 
 <!--EXTRA:END-->
 
