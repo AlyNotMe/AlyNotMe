@@ -21,10 +21,10 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 
 <table><tr><td>
 
+[![AlyNotMe/catalog-product-api](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fcatalog-product-api&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/catalog-product-api)<br/>
 [![PairZhu/github-desktop](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=PairZhu%2Fgithub-desktop&pr_title=Heads%20up%3A%20upstream%20has%20moved%20forward%20a%20lot%20since%20this%20fork&pr_date=2026-09-30T11%3A29%3A09Z&pr_state=open&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/PairZhu/github-desktop/pull/2)<br/>
 [![AlyNotMe/github-desktop](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fgithub-desktop&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/github-desktop)<br/>
 [![AlyNotMe/NeoChess-Legacy](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2FNeoChess-Legacy&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/NeoChess-Legacy)<br/>
-[![AlyNotMe/catalog-product-api](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fcatalog-product-api&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/catalog-product-api)<br/>
 [![nodeSolidServer/node-solid-server](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=nodeSolidServer%2Fnode-solid-server&pr_title=fix%3A%20add%20Last-Modified%20header%20to%20GET%20and%20HEAD%20responses&pr_date=2026-09-23T13%3A10%3A22Z&pr_state=open&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/nodeSolidServer/node-solid-server/pull/1875)
 
 <details><summary>Voir plus (5)</summary><br/>
