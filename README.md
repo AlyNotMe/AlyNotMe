@@ -21,7 +21,7 @@ Actuellement concentré sur **Forja**, un framework Node.js/Express « sans opin
 
 <table><tr><td>
 
-[![LibreSign/libresign](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=LibreSign%2Flibresign&pr_title=fix(search)%3A%20end%20unified%20search%20pagination%20and%20order%20results%20stably&pr_date=2026-10-13T15%3A56%3A15Z&pr_state=open&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/LibreSign/libresign/pull/9071)<br/>
+[![LibreSign/libresign](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=LibreSign%2Flibresign&pr_title=fix(search)%3A%20end%20unified%20search%20pagination%20and%20order%20results%20stably&pr_date=2026-10-13T17%3A34%3A28Z&pr_state=open&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/LibreSign/libresign/pull/9071)<br/>
 [![AlyNotMe/catalog-product-api](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fcatalog-product-api&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/catalog-product-api)<br/>
 [![PairZhu/github-desktop](https://github-readme-stats-kms.vercel.app/api/repo-status?pr_repo=PairZhu%2Fgithub-desktop&pr_title=Heads%20up%3A%20upstream%20has%20moved%20forward%20a%20lot%20since%20this%20fork&pr_date=2026-09-30T11%3A29%3A09Z&pr_state=open&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/PairZhu/github-desktop/pull/2)<br/>
 [![AlyNotMe/github-desktop](https://github-readme-stats-kms.vercel.app/api/repo-status?repo=AlyNotMe%2Fgithub-desktop&bg_color=15130f&text_color=ece7dd&accent_color=e08a4f)](https://github.com/AlyNotMe/github-desktop)<br/>
